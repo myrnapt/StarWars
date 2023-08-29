@@ -1,18 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand navbar-light bg-light">
     <div class="container-fluid">
       <div class="collapse navbar-collapse justify-content-center " id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Ships</a>
+            <a class="nav-link" [routerLink]="['/ships']">Ships</a>
           </li>
           <li *ngIf='!userLoginIn' class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" [routerLink]="['/login']" >Login</a>
           </li>
           <li *ngIf='userLoginIn'class="nav-item">
-            <a class="nav-link" href="#">Log out</a>
+            <a class="nav-link" r[routerLink]="['/home']" >Log out</a>
           </li>
         </ul>
       </div>
