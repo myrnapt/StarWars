@@ -1,26 +1,35 @@
 <form [formGroup]="loginForm">
+
+  <!--  EMAIL  -->
     <div class="form-group">
-      <label for="exampleInputEmail1">Email</label>
-      <input formControlName='email' type="email" class="form-control" id="exampleInputEmail1" placeholder="example@email.com">
+      <label for="Email">Email</label>
+      <input formControlName='email' type="email" class="form-control"  placeholder="example@email.com">
+
+        <!-- SI NO PASA LAS VALIDACIONES MOSTRAMOS ERROR -->
         <div *ngIf="email.invalid && (email.dirty || email.touched)"
         class="text-danger">
-        <div *ngIf="email.errors?.['required']">
-            Email address is required
+          <div *ngIf="email.errors?.['required']">
+              Email address is required
+          </div>
+          <div *ngIf="email.errors?.['email']">
+              Emai address needs to have a valid format
+          </div>
         </div>
-        <div *ngIf="email.errors?.['email']">
-            Emai address needs to have a valid format
-        </div>
-  </div>
     </div>
+
+    <!-- CONTRASEÑA -->
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input formControlName='password' type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <label for="Password">Password</label>
+      <input formControlName='password' type="password" class="form-control" placeholder="Password">
+        <!-- SI NO PASA LAS VALIDACIONES MOSTRAMOS ERROR --> 
         <div *ngIf="password.invalid && (password.dirty || password.touched)"
-        class="text-danger">
-        <div *ngIf="password.errors?.['required']">
-          Password is required
+          class="text-danger">
+            <div *ngIf="password.errors?.['required']">
+              Password is required
+            </div>
         </div>
-      </div>
     </div>
-    <button (click)="login()" type="submit" class="btn btn-primary mt-2" >Login</button>
+
+   <button (click)="login()" type="submit" class="btn btn-primary mt-2" >Login</button>
+
   </form>

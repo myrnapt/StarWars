@@ -1,3 +1,14 @@
 <shared-navbar></shared-navbar>
-LISTA DE NAVES
-{{ shipsList | json }}
+
+<div *ngIf="!userLogged">
+  You need to login or register in order to see this page.
+</div>
+
+<div *ngIf="!userLogged">
+  <h3>LISTA DE NAVES</h3>
+  <ul>
+    <li *ngFor="let ship of shipsList; let i = index">
+      {{ i + 1 }}. {{ ship.name }} - {{ ship.model }}
+    </li>
+  </ul>
+</div>

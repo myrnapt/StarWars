@@ -8,11 +8,12 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/ships']">Ships</a>
           </li>
-          <li *ngIf='!userLoginIn' class="nav-item">
+          <!-- ENSEÑAR BOTON DEPENDIENDO DE SI ESTA LOGGEADO O NO -->
+          <li *ngIf='!userLoginIn' class="nav-item"> 
             <a class="nav-link" [routerLink]="['/login']" >Login</a>
           </li>
           <li *ngIf='userLoginIn'class="nav-item">
-            <a class="nav-link" r[routerLink]="['/home']" >Log out</a>
+            <a class="nav-link" [routerLink]="['/home']" >Log out</a>
           </li>
         </ul>
       </div>
