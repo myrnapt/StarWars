@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SharedModule } from '../shared/shared.module';
 import { ShipsComponent } from './ships/ships.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    ShipsComponent
+    ShipsComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,

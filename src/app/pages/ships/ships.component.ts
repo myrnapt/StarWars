@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StarshipList } from 'src/app/interfaces/ships.interface';
 import { SwapiService } from 'src/app/services/swapi.service';
 
@@ -10,13 +11,20 @@ import { SwapiService } from 'src/app/services/swapi.service';
 export class ShipsComponent  implements OnInit{
 
   
-  constructor(private swapiService: SwapiService) {}
+  constructor(private swapiService: SwapiService, private router: Router) {}
   
   // CARGAMOS AL ABRIR LA PAGINA
   ngOnInit(): void {
     this.getShips()
   }
   
+  logout() {
+    const confirmation = confirm('Do you want to log out?')
+    if (confirmation) {
+      localStorage.removeItem('token')
+      this.router.navigateByUrl('/home')
+    }
+  }
   // VARIABLE LOGGIN
   userLogged: boolean = false
 

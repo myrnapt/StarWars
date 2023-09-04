@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/interfaces/user.interface';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -26,11 +25,11 @@ export class LoginComponent {
   get  password() {
     return this.loginForm.controls.password
   }
-
   // FUNCION QUE SE EMITE AL TOCAR EL BOTON DE LOGIN
   login() {
     if (this.loginForm.valid) { // SI ES VALIDO
-      this.loginService.login(this.loginForm.value as User) ;  // CONECTAMOS SERVICIO
+      localStorage.setItem('token', Math.random.toString())
+      this.loginService.login() ;  // CONECTAMOS SERVICIO
       this.router.navigateByUrl('/ships'); // NAVEGAMOS AL COMPONENTE
       this.loginForm.reset(); // VACIAMOS FORMULARIO
     } else {
