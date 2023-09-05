@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +9,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent {
   
-  constructor(private formBuilder: FormBuilder, private router: Router, private loginService: LoginService) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   // CREAMOS VAR DONDE GUARDAR EL FORMULARIO
   loginForm = this.formBuilder.group({
@@ -29,7 +28,6 @@ export class LoginComponent {
   login() {
     if (this.loginForm.valid) { // SI ES VALIDO
       localStorage.setItem('token', Math.random.toString())
-      this.loginService.login() ;  // CONECTAMOS SERVICIO
       this.router.navigateByUrl('/ships'); // NAVEGAMOS AL COMPONENTE
       this.loginForm.reset(); // VACIAMOS FORMULARIO
     } else {

@@ -6,14 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
+
   userLoginIn: boolean = false
-  token: any = localStorage.getItem('token')
+  token = localStorage.getItem('token')
   
   ngOnInit(): void {
     if (this.token) {
-      this.userLoginIn = true
-    } else {
       this.userLoginIn = false
+    } else {
+      this.userLoginIn = true
     }
   }
 

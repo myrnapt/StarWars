@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SharedModule } from '../shared/shared.module';
 import { ShipsComponent } from './ships/ships.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { StarshipCardComponent } from './starship-card/starship-card.component';
 
 
 
@@ -10,10 +12,12 @@ import { ShipsComponent } from './ships/ships.component';
   declarations: [
     DashboardComponent,
     ShipsComponent,
+    StarshipCardComponent,
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    InfiniteScrollModule
   ],
   exports: [
     DashboardComponent,
