@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SharedModule } from '../shared/shared.module';
 import { ShipsComponent } from './ships/ships.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -11,7 +10,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
   declarations: [
     DashboardComponent,
     ShipsComponent,
-    NotFoundComponent
   ],
   imports: [
     CommonModule,

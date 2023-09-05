@@ -14,7 +14,9 @@ export class ShipsComponent  implements OnInit{
   constructor(private swapiService: SwapiService, private router: Router) {}
   
   // CARGAMOS AL ABRIR LA PAGINA
-  ngOnInit(): void {
+  // VARIABLE LOGGIN
+
+  ngOnInit() {
     this.getShips()
   }
   
@@ -25,8 +27,7 @@ export class ShipsComponent  implements OnInit{
       this.router.navigateByUrl('/home')
     }
   }
-  // VARIABLE LOGGIN
-  userLogged: boolean = false
+
 
   // DECLARAMOS LISTA BASADA EN LA INTERFAZ
   shipsList: StarshipList[] = [];
