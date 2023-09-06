@@ -3,10 +3,10 @@
 <h3>LISTA DE NAVES</h3>
 
 <button
-  (click)="openFormModal()"
+  (click)="openFormModal(); selectShip(ship)"
   class="card"
   style="width: 28rem"
-  *ngFor="let ship of shipsList; let i = index"
+  *ngFor="let ship of shipsList"
   infiniteScroll
   [infiniteScrollDistance]="2"
   [infiniteScrollThrottle]="50"
@@ -31,7 +31,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
-        <app-starship-card [lista]="lista"></app-starship-card>
+        <app-starship-card></app-starship-card>
       </div>
     </div>
   </div>

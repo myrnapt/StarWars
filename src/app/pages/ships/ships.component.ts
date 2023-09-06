@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { StarshipList, Starships } from 'src/app/interfaces/ships.interface';
 import { SwapiService } from 'src/app/services/swapi.service';
 
@@ -49,7 +50,6 @@ export class ShipsComponent implements OnInit {
   
   shipsList: StarshipList[] = [];
 
-   lista: any[] = [1,2,3,4,5, 'fdgdg']
 
   // SCROLL INFINITO
   onScroll(){
@@ -68,4 +68,16 @@ export class ShipsComponent implements OnInit {
   openFormModal() {
      this.formModal.show();
   }
+
+  selectShip(nave: StarshipList) {
+    console.log('Nave seleccionada en componente A:', nave);
+    this.swapiService.selectShip(nave);
+  }
+
+
+
+
+
+
+
 }

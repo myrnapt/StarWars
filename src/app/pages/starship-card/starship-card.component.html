@@ -1,3 +1,15 @@
-<h3>Hello!</h3>
- <p>COSAS  otro </p>
-{{ lista }}
+
+
+<h3> {{selectedShip?.name}} </h3>
+MODEL: {{ selectedShip?.model }} <br>
+CLASS: {{ selectedShip?.starship_class}} <br>
+MANUFACTURER: {{ selectedShip?.manufacturer }} <br>
+COST: {{ selectedShip?.cost_in_credits}} IN CREDITS <br>
+CREW SIZE: {{ selectedShip?.crew }}<br>
+PASSANGER CAPACITY: {{ selectedShip?.passengers }}<br>
+CARGO CAPACITY: {{selectedShip?.cargo_capacity }} TONS <br>
+CONSUMABLES: {{ selectedShip?.consumables }} <br>
+LENGTH: {{ selectedShip?.length }} METERS <br>
+MAXIMUM ATMOSPHERING SPEED: {{ selectedShip?.max_atmosphering_speed }} KM/H <br>
+HYPERDRIVE RATING: {{ selectedShip?.hyperdrive_rating }}<br>
+MAXIMUM SPEED IN REALSPACE: {{ selectedShip?.MGLT }} MGLT
