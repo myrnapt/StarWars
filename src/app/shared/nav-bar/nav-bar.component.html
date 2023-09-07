@@ -1,16 +1,19 @@
-<nav class="navbar navbar-expand navbar-light bg-light">
+<nav class="navbar navbar-expand navbar-light">
     <div class="container-fluid">
       <div class="collapse navbar-collapse justify-content-center " id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
+            <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active"> HOME </a>
           </li>
           <li *ngIf='!userLoginIn' class="nav-item">
-            <a class="nav-link" [routerLink]="['/ships']">Ships</a>
+            <a class="nav-link" [routerLink]="['/ships']"> SHIPS </a>
           </li>
           <!-- ENSEÑAR BOTON DEPENDIENDO DE SI ESTA LOGGEADO O NO -->
           <li *ngIf='userLoginIn' class="nav-item"> 
-            <a class="nav-link" [routerLink]="['/login']" >Login</a>
+            <a class="nav-link" [routerLink]="['/login']"> LOGIN </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.disneyplus.com/es-es/brand/star-wars"> DISNEY+ </a>
           </li>
         </ul>
       </div>

@@ -21,6 +21,13 @@ export class SwapiService {
   selectShip(nave: StarshipList) {
     this.selectedShip.next(nave);
   }
+  
+  // API IMAGENES
+  getShipsImages(id: number): Observable<any> {
+    return this.http.get<any>(`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`);
+  }
+  
+
 
 
 }

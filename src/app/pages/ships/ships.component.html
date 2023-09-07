@@ -1,17 +1,16 @@
 <shared-navbar></shared-navbar>
-
-<h3>LISTA DE NAVES</h3>
-
-<button
+<body class="bg-image repeat">
+    
+  <button
   (click)="openFormModal(); selectShip(ship)"
-  class="card"
+  class="card mt-3"
   style="width: 28rem"
   *ngFor="let ship of shipsList"
   infiniteScroll
   [infiniteScrollDistance]="2"
   [infiniteScrollThrottle]="50"
   (scrolled)="onScroll()"
->
+  >
   <div class="card-body">
     <h5 class="card-title">{{ ship.name }}</h5>
     <p class="card-text">{{ ship.model }}</p>
@@ -22,17 +21,18 @@
 
 <!--MODAL-->
 <div
-  class="modal fade"
+class="modal fade"
   id="myModal"
   tabindex="-1"
   aria-labelledby="exampleModalLabel"
   aria-hidden="true"
->
+  >
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
-        <app-starship-card></app-starship-card>
+        <app-starship-card [starshipId]="selectedShip"></app-starship-card>
       </div>
     </div>
   </div>
 </div>
+</body>

@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { StarshipList } from 'src/app/interfaces/ships.interface';
-import { SwapiService } from 'src/app/services/swapi.service';
+import { SwapiService } from 'src/app/services/swapi.service'; 
 
 @Component({
   selector: 'app-starship-card',
@@ -8,17 +7,33 @@ import { SwapiService } from 'src/app/services/swapi.service';
   styleUrls: ['./starship-card.component.scss']
 })
 export class StarshipCardComponent implements OnInit {
+  
+  constructor(private SwapiService: SwapiService) {}
 
-  selectedShip: any
+  @Input() starshipId: number = 1
+  selectedShip: any;
+  urlImg: string = 'https://starwars-visualguide.com/assets/img/starships/';
 
-  constructor(private swapiService: SwapiService) {}
 
   ngOnInit(): void {
-    this.swapiService.selectedShip$.subscribe((nave) => {
-      console.log('Nave seleccionada en componente B:', nave);
-      this.selectedShip = nave;
-    });
+    console.log(this.selectedShip.id, 'id nave');
   }
 
+  ngOnChanges(): void {
+    if (this.starshipId) {
+      this.getShipCard(this.starshipId);
+    }
+  }
+
+  getShipCard(id: number) {
+    this.selectedShip = this.SwapiService.getShipsImages(id)
+      .subscribe(resp => {
+        this.selectedShip = resp;
+      });
+  }
+
+  getImageUrl(id: number): string {
+    return `${this.urlImg}${id}.jpg`;
+  }
 
 }

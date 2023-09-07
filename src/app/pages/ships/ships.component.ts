@@ -33,8 +33,6 @@ export class ShipsComponent implements OnInit {
       this.router.navigateByUrl('/home');
     }
   }
-
-  // DECLARAMOS LISTA BASADA EN LA INTERFAZ
   
   
   // TRAEMOS EL SERVICIO DE LA API
@@ -69,15 +67,11 @@ export class ShipsComponent implements OnInit {
      this.formModal.show();
   }
 
+  selectedShip: any
+
   selectShip(nave: StarshipList) {
-    console.log('Nave seleccionada en componente A:', nave);
-    this.swapiService.selectShip(nave);
+    this.selectedShip = this.swapiService.selectShip(nave)
   }
-
-
-
-
-
 
 
 }
