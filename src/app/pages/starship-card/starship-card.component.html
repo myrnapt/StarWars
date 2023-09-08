@@ -1,21 +1,30 @@
-<h3>{{ selectedShip?.name }}</h3>
-<!-- <img [src]="getImageUrl(starshipId)" 
-     class="card-img-top"> -->
-<img
-  class="card-img-top"
-  src="https://starwars-visualguide.com/assets/img/starships/5.jpg"
-/>
-<p>MODEL: {{ selectedShip?.model }}</p>
-<p>CLASS: {{ selectedShip?.starship_class }}</p>
-<p>MANUFACTURER: {{ selectedShip?.manufacturer }}</p>
-<p>COST: {{ selectedShip?.cost_in_credits }} IN CREDITS</p>
-<p>CREW SIZE: {{ selectedShip?.crew }}</p>
-<p>PASSANGER CAPACITY: {{ selectedShip?.passengers }}</p>
-<p>CARGO CAPACITY: {{ selectedShip?.cargo_capacity }} TONS</p>
-<p>CONSUMABLES: {{ selectedShip?.consumables }}</p>
-<p>LENGTH: {{ selectedShip?.length }} METERS</p>
-<p>
-  MAXIMUM ATMOSPHERING SPEED: {{ selectedShip?.max_atmosphering_speed }} KM/H
-</p>
-<p>HYPERDRIVE RATING: {{ selectedShip?.hyperdrive_rating }}</p>
-<p>MAXIMUM SPEED IN REALSPACE: {{ selectedShip?.MGLT }} MGLT</p>
+<body>
+  <!-- <img [src]="getImageUrl(starshipId)" 
+    class="card-img-top"> -->
+    <img
+    class="card-img-top mb-3"
+    src="https://starwars-visualguide.com/assets/img/starships/5.jpg"
+    />
+    <h3>{{ selectedShip?.name }}</h3>
+  <div class="row">
+    <div class="col-6">
+      <p><b> MODEL: </b>{{ selectedShip?.model }}</p>
+      <p><b> CLASS: </b>{{ selectedShip?.starship_class }}</p>
+      <p><b> MANUFACTURER: </b>{{ selectedShip?.manufacturer }}</p>
+      <p><b> COST: </b> {{ selectedShip?.cost_in_credits }} in credits</p>
+      <p><b> CREW SIZE: </b>{{ selectedShip?.crew }}</p>
+      <p><b> PASSANGER CAPACITY: </b>{{ selectedShip?.passengers }}</p>
+    </div>
+    <div class="col-6">
+      <p><b> CARGO CAPACITY: </b> {{ selectedShip?.cargo_capacity }} tons</p>
+      <p><b> CARGO CAPACITY: </b> {{ selectedShip?.consumables }}</p>
+      <p><b> LENGTH: </b> {{ selectedShip?.length }} meters</p>
+      <p>
+        <b> MAXIMUM ATMOSPHERING SPEED: </b
+        >{{ selectedShip?.max_atmosphering_speed }} km/h
+      </p>
+      <p><b> HYPERDRIVE RATING: </b> {{ selectedShip?.hyperdrive_rating }}</p>
+      <p><b> MAXIMUM SPEED IN REALSPACE: </b>{{ selectedShip?.MGLT }} MGLT</p>
+    </div>
+  </div>
+</body>
