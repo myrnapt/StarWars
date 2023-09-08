@@ -1,19 +1,21 @@
-
-
-<h3> {{selectedShip?.name}} </h3>
-<img [src]="getImageUrl(starshipId)" 
-     class="card-img-top">
-
-     <!-- <img class="card-img-top" src="https://starwars-visualguide.com/assets/img/starships/5.jpg"> -->
-MODEL: {{ selectedShip?.model }} <br>
-CLASS: {{ selectedShip?.starship_class}} <br>
-MANUFACTURER: {{ selectedShip?.manufacturer }} <br>
-COST: {{ selectedShip?.cost_in_credits}} IN CREDITS <br>
-CREW SIZE: {{ selectedShip?.crew }}<br>
-PASSANGER CAPACITY: {{ selectedShip?.passengers }}<br>
-CARGO CAPACITY: {{selectedShip?.cargo_capacity }} TONS <br>
-CONSUMABLES: {{ selectedShip?.consumables }} <br>
-LENGTH: {{ selectedShip?.length }} METERS <br>
-MAXIMUM ATMOSPHERING SPEED: {{ selectedShip?.max_atmosphering_speed }} KM/H <br>
-HYPERDRIVE RATING: {{ selectedShip?.hyperdrive_rating }}<br>
-MAXIMUM SPEED IN REALSPACE: {{ selectedShip?.MGLT }} MGLT
+<h3>{{ selectedShip?.name }}</h3>
+<!-- <img [src]="getImageUrl(starshipId)" 
+     class="card-img-top"> -->
+<img
+  class="card-img-top"
+  src="https://starwars-visualguide.com/assets/img/starships/5.jpg"
+/>
+<p>MODEL: {{ selectedShip?.model }}</p>
+<p>CLASS: {{ selectedShip?.starship_class }}</p>
+<p>MANUFACTURER: {{ selectedShip?.manufacturer }}</p>
+<p>COST: {{ selectedShip?.cost_in_credits }} IN CREDITS</p>
+<p>CREW SIZE: {{ selectedShip?.crew }}</p>
+<p>PASSANGER CAPACITY: {{ selectedShip?.passengers }}</p>
+<p>CARGO CAPACITY: {{ selectedShip?.cargo_capacity }} TONS</p>
+<p>CONSUMABLES: {{ selectedShip?.consumables }}</p>
+<p>LENGTH: {{ selectedShip?.length }} METERS</p>
+<p>
+  MAXIMUM ATMOSPHERING SPEED: {{ selectedShip?.max_atmosphering_speed }} KM/H
+</p>
+<p>HYPERDRIVE RATING: {{ selectedShip?.hyperdrive_rating }}</p>
+<p>MAXIMUM SPEED IN REALSPACE: {{ selectedShip?.MGLT }} MGLT</p>

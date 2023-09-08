@@ -60,9 +60,12 @@ export class ShipsComponent implements OnInit {
 
   selectedShip: any
 
+ 
   selectShip(nave: StarshipList) {
-    this.selectedShip = this.swapiService.selectShip(nave)
+    console.log('Nave seleccionada en componente A:', nave);
+    this.swapiService.selectShip(nave);
   }
+
 
 
 }

@@ -8,7 +8,7 @@ import { SwapiService } from 'src/app/services/swapi.service';
 })
 export class StarshipCardComponent implements OnInit {
   
-  constructor(private SwapiService: SwapiService) {}
+  constructor(private swapiService: SwapiService) {}
 
   @Input() starshipId: number = 1
   selectedShip: any;
@@ -16,24 +16,21 @@ export class StarshipCardComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.selectedShip.id, 'id nave');
+    this.swapiService.selectedShip$.subscribe((nave) => {
+      console.log('Nave seleccionada en componente B:', nave);
+      this.selectedShip = nave;
+    });
   }
 
-  ngOnChanges(): void {
-    if (this.starshipId) {
-      this.getShipCard(this.starshipId);
-    }
-  }
+  // getShipCard(id: number) {
+  //   this.selectedShip = this.SwapiService.getShipsImages(id)
+  //     .subscribe(resp => {
+  //       this.selectedShip = resp;
+  //     });
+  // }
 
-  getShipCard(id: number) {
-    this.selectedShip = this.SwapiService.getShipsImages(id)
-      .subscribe(resp => {
-        this.selectedShip = resp;
-      });
-  }
-
-  getImageUrl(id: number): string {
-    return `${this.urlImg}${id}.jpg`;
-  }
+  // getImageUrl(id: number): string {
+  //   return `${this.urlImg}${id}.jpg`;
+  // }
 
 }
