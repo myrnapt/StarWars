@@ -5,12 +5,17 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active"> HOME </a>
           </li>
+          <li *ngIf='userLoginIn' class="nav-item">
+            <a class="nav-link disabled" [routerLink]="['/ships']"> SHIPS </a>
+          </li>
           <li *ngIf='!userLoginIn' class="nav-item">
             <a class="nav-link" [routerLink]="['/ships']"> SHIPS </a>
           </li>
-          <!-- ENSEÑAR BOTON DEPENDIENDO DE SI ESTA LOGGEADO O NO -->
           <li *ngIf='userLoginIn' class="nav-item"> 
             <a class="nav-link" [routerLink]="['/login']"> LOGIN </a>
+          </li>
+          <li class="nav-item" *ngIf='!userLoginIn'>
+            <a class="nav-link" (click)="logout()"> LOG OUT </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://www.disneyplus.com/es-es/brand/star-wars"> DISNEY+ </a>

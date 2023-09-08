@@ -7,8 +7,23 @@
     margin-left: auto;
     margin-right: auto;
     border: none ;
-    border-radius: 5px;
-    background-color: rgb(129, 129, 129, 0.95);
-    color:rgb(24, 24, 24);
+    border-radius: 0px;
+    background-color: rgb(39, 39, 39, 0.9);
+    color:rgb(255, 255, 255);
     text-align: left;
+    width: 40rem;
+    margin-bottom: 20px;
+    font-family: 'Jura', sans-serif;    
+}
+.card-title {
+    text-transform:uppercase;
+    font-weight: 600;
+}
+
+h3 {
+    text-align: center;
+    color: white;
+    font-size:50px;
+    padding: 35px;
+    text-shadow: 5px 5px 10px rgb(0, 0, 0);
 }

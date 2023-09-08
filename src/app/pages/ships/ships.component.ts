@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
 import { StarshipList, Starships } from 'src/app/interfaces/ships.interface';
 import { SwapiService } from 'src/app/services/swapi.service';
 
@@ -25,14 +24,6 @@ export class ShipsComponent implements OnInit {
     }
   }
 
-  // DESCONECTAR
-  logout() {
-    const confirmation = confirm('Do you want to log out?');
-    if (confirmation) {
-      localStorage.removeItem('token');
-      this.router.navigateByUrl('/home');
-    }
-  }
   
   
   // TRAEMOS EL SERVICIO DE LA API

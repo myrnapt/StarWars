@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'shared-navbar',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
+  constructor( private router:Router) {}
   userLoginIn: boolean = false
   token = localStorage.getItem('token')
   
@@ -17,5 +19,14 @@ export class NavBarComponent implements OnInit {
       this.userLoginIn = true
     }
   }
+  
 
+  // DESCONECTAR
+  logout() {
+    const confirmation = confirm('Do you want to log out?');
+    if (confirmation) {
+      localStorage.removeItem('token');
+      this.router.navigateByUrl('/home');
+    }
+  }
 }
